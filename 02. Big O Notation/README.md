@@ -337,13 +337,13 @@ logAtMost5(30)
 5
 ```
 
-The above code: So it's going to take whatever is smaller if I give it a a larger number, if it's larger than 5 it's going to log 5. If I give it something less than 5 the it will log until that value. Positive value only, negative value, it doesn't do anything.
+The above code: So it's going to take whatever is smaller if I give it a a larger number, if it's larger than 5 it's going to log 5. If I give it something less than 5 then it will log until that value. Positive value only, negative value, it doesn't do anything.
 
-As `n` grows here it kind of doesn't matter because we're going to take the min which is five, so if `n` is approaching to infinity, this loop runs five times only.
+As `n` grows doesn't matter because we're going to take the min which is five, so if `n` is approaching to infinity, this loop runs five times only.
 
 If `n` is two then the loop runs five times.
 
-We can simplify that by saying that if `n` grows which ws what we care about the big O of this is constant `O(1)`.
+We can simplify this by saying that if `n` grows which which is what we care about, the big O of this is constant `O(1)`.
 
 
 
