@@ -211,18 +211,18 @@ Back down. Bye!
     }
 ```
 
-So for the above code as `n` grows we have roughly `n` operation to have a loop. So there's a `O(n)` because this as `n` grows this loop.
+So for the above code as `n` grows, we have roughly `n` operation to have a loop. So there's a `O(n)` because this as `n` grows this loop grows as well.
 
 ```
   for(let j = n-1;j>=0;j--){
         console.log(j)
     }
 ```
-So for the above code, is the same as the previous above code, as `n` grows this loops grows the same. It's just doing the same thing in the other under going back down.
+So for the above code, is the same as the previous above code, as `n` grows, this loops grows as well. It's just doing the same thing as previous loop but is going back down.
 
 > Number of operation is (eventually) bounded by a multiple of n ( say, 10n)
 
-So you might think the big n, its 2n. But remember that we don't care about that we care about the big picture. So we simplify it to `O(n)`
+So you might think the big n, its 2n. But remember that we don't care about that, we care about the big picture. So we simplify it to `O(n)`
 
 #### OMG MOAR EXAMPLEZ
 
@@ -249,7 +249,7 @@ printAllPairs(2)
     ....
     }
 ```
-`O(n)` Based on the above code, the loop is based on `n` that mean `O(n)`, as `n` grows, this is going to be `n` number of operations,
+`O(n)` Based on the above code, the loop is based on `n` that mean `O(n)`, as `n` grows, this is going to be `n` number of operations.
 
 
 ```
@@ -259,9 +259,9 @@ for (let j = 0; j<n; j++){
         }
 ```
 
-`O(n)`, which is the same thing as the above code. `O(n)` which just means that as `n` grows, this loop the number or times it run gros as well.
+`O(n)`, which is the same thing as the above code. `O(n)` which just means that as `n` grows, on this loop, the number or times it run grows as well.
 
-`O(n)` operations inside of an `O(n)` operation, that gives us something else, an O(n) operation inside an `O(n)` operation give as `O(n*n)` which is `O(n^2)`
+`O(n)` operations inside of an `O(n)` operation, that gives us something else, an `O(n)` operation inside an `O(n)` operation give as `O(n*n)` which is `O(n^2)`
 
 So what this means is that as `n` grows the runtime grows at the rate of `n^2`
 
