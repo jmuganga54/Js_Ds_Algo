@@ -127,7 +127,7 @@ It allows us to talk in a very formal way about how the runtime of an algorithm 
 >
 > The relationship between the input size and then the time relative to that input
 
-#### Big O Defintion
+#### Big O Definition
 
 We say that an algorithm is `O(f(n))` if the number of simple operations the computer has to do is eventually less than a constant time `f(n)`, as n increase.
 
@@ -266,6 +266,86 @@ for (let j = 0; j<n; j++){
 So what this means is that as `n` grows the runtime grows at the rate of `n^2`
 
 > This is just a generalized way for talking about how efficient an algorithm is as an input `n` grows, how does that change to reflect in the runtime.
+
+### Simplifying Big O Expressions
+
+When determining the time complexity of an algorithm, there are some helpful rule of thumbs for big O expressions.
+
+These rules of thumb are consequences of the definition of big O notation.
+
+#### Constants Don't Matter
+* `O(2n)` we simplify that just to `O(n)`
+* `O(500)` we simplify than to `O(1)`
+> `O(500)`is basically saying there are 500 operations every time no matter what `n` is.
+* `O(13n^2)` we just simplify it to `O(n^2)`
+
+#### Smaller Terns Don't Matter
+* `O(n + 10)` is just `O(n)`
+* `O(1000n + 50)` is just `O(n)`
+* `O(n^2 + 5n +8)` is just `O(n^2)`
+
+#### Big O Shorthands
+* Analyzing complexity with big O can get complicated.
+* There are several rules of thumb that can help
+* These rules won't `Always work`, but are a helpful starting point.
+> 1. Arithmetic operations are constant
+> 2. Variable assignments are constant
+> 3. Accessing elements in an array (by index) or object(by key) is constant
+> 4. In a loop, the complexity is the length of the loop times the complexity of whatever happens inside of the loop
+    > But then whatever happens inside that loop is also consequential because if we have nested loops as we've seen then we end up with potentially `n` squared runtime.
+#### A Couple More Examples
+```
+function logAtleast5(n){
+    for (let i = 1; i<=Math.max(5,n); i++){
+        console.log(i)
+    }
+}
+
+
+logAtleast5(3)
+
+//Expected output:
+1
+2
+3
+4
+5
+```
+
+So if I give it three we still get five but if I give it seven we get seven printed out one two three up to seven
+
+And what we care about is what happens when `n` grows larger, So if `n` continues to grow  towards infinity. What happens to the runtime.
+
+So if `n` is `10 million` this loop is going to run 10 million times.
+
+So we can just simplify this and say that the big O of this is `O(n)` and because if `n` grows  the number of operations grows in proportion with `n`.
+
+```
+function logAtMost5(n){
+    for(let i= 1; i<= Math.min(5,n); i++){
+        console.log(i)
+    }
+}
+
+logAtMost5(30)
+
+//Expected output:
+1
+2
+3
+4
+5
+```
+
+The above code: So it's going to take whatever is smaller if I give it a a larger number, if it's larger than 5 it's going to log 5. If I give it something less than 5 the it will log until that value. Positive value only, negative value, it doesn't do anything.
+
+As `n` grows here it kind of doesn't matter because we're going to take the min which is five, so if `n` is approaching to infinity, this loop runs five times only.
+
+If `n` is two then the loop runs five times.
+
+We can simplify that by saying that if `n` grows which ws what we care about the big O of this is constant `O(1)`.
+
+
 
 
 
