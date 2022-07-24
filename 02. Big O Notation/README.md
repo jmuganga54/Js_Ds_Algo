@@ -346,18 +346,155 @@ If `n` is two then the loop runs five times.
 We can simplify this by saying that if `n` grows which is what we care about, the big O of this is constant `O(1)`.
 
 
+### Space Complexity
+So far, we've been focusing on `time complexity:` how can we analyze the runtime of an algorithm as the size of the input increase?
 
+We can also use big O notation to analyze `space complexity` how much additional memory do we need to allocate in order to run the code in our algorithm?
 
+#### What about the inputs?
 
+Sometimes you'll hear the term `auxiliary space complexity` to refer to space required by the algorithm, not including space taken up by the inputs.
 
+Unless otherwise noted, when we talk about space complexity, technically we'll be talking about auxiliary space complexity.
 
+Basically it just means we're focusing on what  happens inside the algorithm.
 
+#### Space Complexity in Js
 
+Rule of Thumb
+* Most primitive (booleans, numbers, undefined, null) are constant space.
+* Strings require `O(n)`space (where n is the string length)
+* Reference type are generally `O(n)`, where `n` is the length (for arrays) or the number of keys (for objects)
 
+#### An Example
+```
+function sum(arr){
+    let total = 0;
+    for(let i=0; i<arr.length; i++){
+        total += arr[i];
+    }
+    return total;
+}
 
+console.log(sum([5,5]))
 
+//Expected output: 10
+```
+So here we're focusing on not time complexity, we're focussing on space complexity.
 
+No matter what the array length is we have one variable called `total` . And the we have a second declaration inside the `for loop` which is `let i=0`, and that's it for space.
 
+We're coming back to the total variable, we're adding into it but that doesn't matter, that takes time, but the space is already there.
 
+No matter what the size of the array is, as it grows might be thousand items or it might be a million items.It doesn't have an impact on the space that's taken up because we only have these `two variables` and they exist no matter what.
+
+We're not adding new variables based of the length, we are adding to the `total variable`,but we're not making a new variable.
+
+so that really just means we have constant space `O(1)` space. It's always the same no matter the size of the input.
+
+> Another Example
+
+```
+function double(arr){
+    let newArr = [];
+    for(let i = 0; i<arr.length; i++){
+        newArr.push(2*arr[i]);
+    }
+    return newArr;
+}
+
+console.log(double([2,4,8]))
+
+//Expected output:[ 4, 8, 16 ]
+```
+So what does that mean for the space complexity of this, as the array length grows,as the input approaches infinity. 
+
+We can simplify it down just to the level of `O(n)`
+
+### Logarithms
+
+We've encountered some of the most common complexities : `O(1), O(n), O(n^2)`
+
+Sometimes big O expression involve more complex mathematical expressions.
+
+One that appears more often than you might like is logarithm!
+
+#### Wait, what's a log again?
+
+`Logarithm` is the inverse of exponentiation.
+
+Just like division and multiplication are a pair, logarithms and exponent are pair.
+
+`log2 (8) = 3` You would read this as log base two of eight equal three.
+
+#### Wut
+
+This isn't math course, so here's a rule of thumb.
+
+The logarithm of a number roughly measure the number of times you can divide the number by 2 `before you get a a value that's less than or equal to one`.
+
+#### Logarithm Examples
+8
+8/2 = 4,
+4/2 = 2
+2/2 = 1
+
+So log(8) = 3
+
+25
+25/2 = 12.5
+12.5/2 = 6.25
+6.25/2 = 3.125
+3.125/2 = 1.5625
+1.5625/2 = 0.78125
+
+log(25) = 4.65
+
+#### Logarithm Complexity
+
+Logarithm time complexity is great!
+
+Logarithm time complexity is greater if you have an algorithm with `O(log n)`, time complexity
+
+#### Who Cares?
+
+Certain search algorithms have logarithmic time complexity.
+
+Efficient sorting algorithms involve logarithms. So not all sorting algorithms but some of the more efficient ones do.
+
+Recursion sometimes involves logarithmic space complexity.
 
 ## Summary
+
+* To analyze the performance of an algorithm, we use Big O Notation.
+* Big O Notation can give use a high level understanding of the time or space complexity of an algorithm
+* Big O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?)
+* The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run the algorithm
+* Big O Notation, everywhere, so get lots of practice!
+
+### Resources
+[Performance Tracker](https://rithmschool.github.io/function-timer-demo/)
+![Big O Notation](./imgs/complexity.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
