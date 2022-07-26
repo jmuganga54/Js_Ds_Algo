@@ -60,6 +60,18 @@ instructor.hasOwnProperty("firstName")
 // true
 
 ```
+### ARRAYS
+So the big selling point of arrays is that they are ordered, there is an intrinsic ordering to the data unlike an object where things just float around in a gelatinous mess.
+
+#### WHEN TO USE ARRAYS
+* When you need order
+* When you need fast access /insertion and removal (sort of..)
+
+#### Big O of Arrays
+Insertion - It depends...
+Removal - It depends
+Searching - O(N)
+Access - O(1)
 
 
 
