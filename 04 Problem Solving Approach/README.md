@@ -6,7 +6,7 @@ Basically you're faced with a tough challenge some code a problem you have to so
 
 What are the steps you can take to make it solvable.
 
-## OBJECTIVES
+### OBJECTIVES
 * Define what an algorithm is
 * Device a plan to solve algorithms
 * Compare and contrast problem solving pattern including frequency counters, two pointer problems divide and conquer.
