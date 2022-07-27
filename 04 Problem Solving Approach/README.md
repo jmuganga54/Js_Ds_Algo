@@ -29,7 +29,7 @@ Almost `everything` that you do in programming involves some kind of `algorithm!
 
 ### HOW DO YOU IMPROVE?
 1. `Devise` a plan for solving problems
->> It is still technical but it's more about how do you approach the problem strategies for breaking it down.
+    > It is still technical but it's more about how do you approach the problem strategies for breaking it down.
 2. `Master` common problem solving patterns.
 
 
