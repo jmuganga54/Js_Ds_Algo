@@ -138,6 +138,7 @@ charCount("hello") //{h:1, e:1, l:2, o:1}
 ```
 
 2. Progress to More Complex Examples
+
 What if the input is "my phone number is 182763"?
 > What do we expect to return, do we count spaces, what about $,_,numbers
 
@@ -146,12 +147,14 @@ What if the input is "Hello hi"
 > This are more complex inputs
 
 3. Explore Examples with Empty Inputs
+
 What if someone pass nothing to the function?
 > charCount()
 OR an empty string, should we return an `empty object {}`, `null`, `undefined` or `an error`
 > charCount("")
 
 4. Explore Examples with Invalid Inputs
+
 So what if somebody passes in something that isn't a string, a number, an object or they pass in null
 
 There's all sorts of these edge cases.
