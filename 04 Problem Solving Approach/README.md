@@ -156,6 +156,80 @@ So what if somebody passes in something that isn't a string, a number, an object
 
 There's all sorts of these edge cases.
 
+### BREAK IT DOWN
+
+It means take the actual steps of the problem and write them down.
+
+Doesn't have to be full pseudo code, it doesn't have to be a valid syntax.Just little comments as a guide for steps needed to be taken.
+
+Explicitly write out the steps you need to take.
+> It doesn't' have to be a ton of detail, it doesn't have to be a line by line, just the basic components of the solution.
+
+This forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and have to worry about details(e.g language syntax) as well.
+
+> Example
+#### Write a function which takes in a string and returns counts of each character in the string.
+
+```
+//Explore Concrete Examples
+charCount("aaa")
+/*
+{
+    a:4
+}
+*/
+
+charCount("hello")
+/*
+{
+    h:1,
+    e:1,
+    l:2,
+    o:1
+}
+*/
+
+charCount("Your PIN number is 1234!")
+/*
+{
+    1:1,
+    2:1,
+    3:1,
+    4:1,
+    b:1,
+    3:1,
+    i:2,
+    m:1,
+    n:2,
+    9:1,
+    p:1,
+    r:2,
+    s:1,
+    u:2,
+    y:1
+
+}
+*/
+//skeleton of the function
+function charCount(str){
+    //do something
+    //return an object with keys that are lowercase alphanumeric characters in the string; values should 
+
+}
+
+function charCount(str){
+    //make object to return at end
+    //loop over string, for each character ..
+        //if the char is a number/letter AND is a  key in object, add one to count
+        //if the char is a number/letter AND not in object, add it to object and set value to 1
+        //if character is something else (space, period, etc) don't do anything
+    //return object at end
+  
+
+}
+```
+
+
 
 
 
