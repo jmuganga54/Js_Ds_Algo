@@ -104,6 +104,57 @@ Ask yourself these question, which will help `understand the problem`
 5. How should I label the important pieces of data that are a part of the problem?
 > So may be we name our function `add` and then we'll have `num1` and `num2` in the arguments, and then `sum` is our result that we `return`
 
+### EXPLORE CONCRETE EXAMPLES
+
+Coming up with examples can help you understand the problem better.
+
+Examples also provide sanity( ability to think and behave) checks that you eventual solution works how it should
+
+> So if you have those examples you can check your work but also you can learn more information by doing, these examples. 
+
+And this applies on a larger scale things like `user stories` or unit tests on a smaller scale. `Unit tests` are used all the time to help lay out, how something should work for a smaller feature.
+
+#### EXPLORE EXAMPLES
+* Start with Simple Examples.
+> Write down two or three simple examples with an input and then the output.
+
+* Progress to More Complex Examples
+> Simple examples the ones that should make you know the easiest `use cases` then progress to more complex examples.
+
+* Explore Examples with Empty Inputs
+> Then what about `edge cases`, explore examples with empty inputs that will often give you some insight into how the problem should work especially in an interview.
+
+* Explore Examples with Invalid inputs.
+> So this is more useful in the real world. What happens if a user enters something that is invalid. We have to think about this all the time.
+
+> Let Explore this with a concrete problem.
+
+#### Write a function which takes in a string and returns count of each character in the string.
+
+1. Start with simple Examples
+```
+charCount("aaa") //{a:4}
+charCount("hello") //{h:1, e:1, l:2, o:1}
+```
+
+2. Progress to More Complex Examples
+What if the input is "my phone number is 182763"?
+> What do we expect to return, do we count spaces, what about $,_,numbers
+
+What if the input is "Hello hi"
+> Do we ignore casing, should we count H:1 and h:1
+> This are more complex inputs
+
+3. Explore Examples with Empty Inputs
+What if someone pass nothing to the function?
+> charCount()
+OR an empty string, should we return an `empty object {}`, `null`, `undefined` or `an error`
+> charCount("")
+
+4. Explore Examples with Invalid Inputs
+So what if somebody passes in something that isn't a string, a number, an object or they pass in null
+
+There's all sorts of these edge cases.
 
 
 
