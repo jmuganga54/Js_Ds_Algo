@@ -33,11 +33,11 @@ Almost `everything` that you do in programming involves some kind of `algorithm!
 2. `Master` common problem solving patterns.
 
 
-### PROBLEM SOLVING Strategies
+### PROBLEM SOLVING 
 
 > This is just laying down a set of steps that can help. But it's not going to solve the problem for you.
 
-### PROBLEM SOLVING
+### PROBLEM SOLVING Strategies
 * Understand the Problem
 * Explore Concrete Examples
 * Break It Down
@@ -160,7 +160,6 @@ So what if somebody passes in something that isn't a string, a number, an object
 There's all sorts of these edge cases.
 
 ### BREAK IT DOWN
-
 It means take the actual steps of the problem and write them down.
 
 Doesn't have to be full pseudo code, it doesn't have to be a valid syntax.Just little comments as a guide for steps needed to be taken.
@@ -228,9 +227,107 @@ function charCount(str){
         //if character is something else (space, period, etc) don't do anything
     //return object at end
   
-
 }
 ```
+
+### SOLVE /SIMPLIFY
+
+> Break down your approach, your solution into a couple of steps that you can follow. It doesn't have to be in details but it does help if you can come up with pretty thorough steps. And then if all of that went well and you feel good about it you can just save and you write your code right away.
+>
+> Even if you do solve it there's still a step after this but sometimes you're not ready to solve the entire problem at this point.You might feel good about 80% but then there's this one thing you're not sure how to do or there's two things that are really challenging.
+
+#### SOLVE THE PROBLEM if you can't ... SOLVE A SIMPLER PROBLEM!
+> What it really mean is trying to ignore the part that is giving you a really hard time in order to focus on everything else.
+
+It's pretty common that in simplifying a problem you'll gain insight into the actual solution into the harder part of the problem and something will click into place.
+
+> So I really recommend that if you do get stuck on something but you know where to start or you know a place to start. You should just go for it,once you've done the first three steps, you understood the problem, you've done concrete examples and you've broken it down into steps.
+
+#### SIMPLIFY
+* Find the core difficulty in what you're trying to do
+* Temporarily ignore that difficulty
+* Write a simplified solution
+* The incorporate that difficulty back in.
+
+
+> Example
+#### Write a function which takes in a string and returns counts of each character in the string.
+
+```
+//Explore Concrete Examples
+charCount("aaa")
+/*
+{
+    a:4
+}
+*/
+
+charCount("hello")
+/*
+{
+    h:1,
+    e:1,
+    l:2,
+    o:1
+}
+*/
+
+charCount("Your PIN number is 1234!")
+/*
+{
+    1:1,
+    2:1,
+    3:1,
+    4:1,
+    b:1,
+    3:1,
+    i:2,
+    m:1,
+    n:2,
+    9:1,
+    p:1,
+    r:2,
+    s:1,
+    u:2,
+    y:1
+
+}
+*/
+//skeleton of the function
+function charCount(str){
+    //do something
+    //return an object with keys that are lowercase alphanumeric characters in the string; values should 
+
+}
+
+function charCount(str){
+    //make object to return at end
+    let result = {};
+    //loop over string, for each character ...
+    for(let i=0; i< str.length; i++){
+        let char = str[i]
+         //if the char is a number/letter AND is a  key in object, add one to count
+        if(result[char] > 0){
+            result[char]+++;
+
+        }else{
+            //if the char is a number/letter AND not in object, add it to object and set value to 1
+            result[char]=1
+        }
+
+    }
+       
+        //if the char is a number/letter AND not in object, add it to object and set value to 1
+        //if character is something else (space, period, etc) don't do anything
+    //return object at end
+    return result;
+  
+}
+```
+
+
+
+
 
 
 
