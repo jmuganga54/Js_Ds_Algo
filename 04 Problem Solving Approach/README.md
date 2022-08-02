@@ -300,19 +300,19 @@ function charCount(str){
 
 }
 
-function charCount(str){
+function charCount(str){ 
     //make object to return at end
     let result = {};
     //loop over string, for each character ...
     for(let i=0; i< str.length; i++){
-        let char = str[i]
+        let char = str[i].toLowerCase();
          //if the char is a number/letter AND is a  key in object, add one to count
         if(result[char] > 0){
-            result[char]+++;
+            result[char]++
 
         }else{
             //if the char is a number/letter AND not in object, add it to object and set value to 1
-            result[char]=1
+            result[char] = 1
         }
 
     }
@@ -323,6 +323,13 @@ function charCount(str){
     return result;
   
 }
+
+
+console.log(charCount('Hi there!'))
+
+//Expected output:
+{ h: 2, i: 1, ' ': 1, t: 1, e: 2, r: 1, '!': 1 }
+
 ```
 
 

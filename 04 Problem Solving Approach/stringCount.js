@@ -1,10 +1,3 @@
-//skeleton of the function
-function charCount(str){
-    //do something
-    //return an object with keys that are lowercase alphanumeric characters in the string; values should 
-
-}
-
 function charCount(str){ 
     //make object to return at end
     let result = {};
