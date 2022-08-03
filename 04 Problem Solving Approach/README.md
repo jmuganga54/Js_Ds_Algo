@@ -249,7 +249,6 @@ It's pretty common that in simplifying a problem you'll gain insight into the ac
 * Write a simplified solution
 * The incorporate that difficulty back in.
 
-
 > Example
 #### Write a function which takes in a string and returns counts of each character in the string.
 
@@ -332,20 +331,98 @@ console.log(charCount('Hi there!'))
 
 ```
 
+### LOOK BACK & REFACTOR
+
+> It's really important to try and improve your code. And it's a missed opportunity if you don't take the time to look at your code, look back and reflect on it. 
+>
+> Look at individual components line by line talk about the part you don't like or what don't like about how the code itself looks, how it reads, how easy it's to understand.
+>
+> Most people care about is efficiency when they're looking at code.But there's often a balance that needs to be struck between those two pillars of efficiency and legibility
+
+#### REFACTORING QUESTIONS
+* Can you check the result?
+* Can you derive the result differently?
+> So this is referring to the fact that there is rarely one solution and only one solution to a problem
+* Can you understand it at a glance?
+> So how intuitive is your solution does that make sense when you look at it on paper or a whiteboard.
+* Can you use the result or method for some other problem?
+* Can you improve the performance of your solution?
+> Mainly time complexity and space complexity.
+* Can you think of other ways to refactor?
+* How have other people solved this problem?
+
+`Remember`: Just write first thing that comes to mind the simplest most basic syntax and then come back and clean it up.
+
+```
+
+// function charCount(str){
+//     let obj = {};
+//     for(let i=0; i<str.length; i++){
+//         let char = str[i].toLowerCase();
+//         if(/[a-z0-9]/.test(char)){
+//             if(obj[char] > 0){
+//                 obj[char]++;
+//             }else{
+//                 obj[char] = 1;
+//             }
+
+//         }
+//     }
+//     return obj
+// }
+
+// function charCount(str){
+//     let obj = {};
+//     for(let char of str){
+//         char = char.toLowerCase();
+//         if(/[a-z0-9]/.test(char)){
+//             // obj[char] > 0 ?  obj[char]++ :  obj[char] = 1;
+//             obj[char] = ++obj[char] || 1
+//         }
+//     }
+//     return obj
+// }
+
+function charCount(str){
+    let obj = {};
+    for(let char of str){
+        if(isAlphaNumeric(char)){
+            char = char.toLowerCase();
+            obj[char] = ++obj[char] || 1
+        }
+    }
+    return obj
+}
+
+function isAlphaNumeric(char){
+    let code = char.charCodeAt(0);
+    if(!(code > 47 && code < 58) && // numeric (0-9)
+       !(code > 64 && code < 91) && // upper alpha (A-Z)
+       !(code > 64 && code < 91)){// lower alpha (a-z)
+        return false;
+       }
+       return true;
+}
+
+console.log(charCount('Hello WORLD hi!!!'))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 ## Summary
+Things you have to do when solving problems
+* Understand the Problem
+
+* Explore Concrete Examples
+
+* Break It Down
+
+> So make sure you know where you're going before you just start typing code.
+*  Solve / Simply
+> If you can't solve the problem right away solve a problem that you can. Even if it's simpler if you simplify you remove some core difficulty, core challenge try and solve something where you can then reincorporate that core difficulty back in.
+>
+> So if you're not sure how to test for something being alphanumeric ignore that part and just write the problem, write the solution ignoring the alphanumeric part so that you could then plug it in later.
+
+* Look Back and Refactor
+> Come back and clean it up.
+
