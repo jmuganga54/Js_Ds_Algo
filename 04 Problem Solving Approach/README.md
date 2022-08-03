@@ -408,6 +408,9 @@ console.log(charCount('Hello WORLD hi!!!'))
 
 
 ```
+>Read More
+
+[Slides Problem Solving Approach](https://cs.slides.com/colt_steele/problem-solving-patterns)
 
 ## Summary
 Things you have to do when solving problems
