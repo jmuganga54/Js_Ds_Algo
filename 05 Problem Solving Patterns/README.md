@@ -90,6 +90,58 @@ false
  So the idea behind the `frequency counter` usually use an object and you use that object to construct a profile sort of a way of breaking down the contents of an array or a string. Usually some sort of linear structure like an array or a string and then you're able to quickly compare that breakdown to how another objects looks. That was constructed from a string or an array.
 
 
+#### ANAGRAMS
+
+Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+```
+validAnagram('','') //true
+validAnagram('aaz','zza') //false
+validAnagram('anagram','nagaram') //true
+validAnagram('rat','car') //false
+validAnagram('awesome','awesom')// false
+validAnagram('qwerty','qeywrt')//true
+validAnagram('texttwisttime','timetwisttext')//true
+
+
+function validAnagram(first,second){
+
+    //checking if the length match, if not return false
+    if(first.length !== second.length){
+        return false;
+    }
+
+    //frequency counter
+    let lookup = {}
+
+    //recording the frequency of each character in the first string
+    for(let i=0;i<first.length; i++){
+        let letter = first[i]
+        //if letter exist, increment, otherwise set to 1
+        lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1
+    }
+    console.log(lookup)
+
+    //Iterating the second string, compare each character with the first string
+    for(let i = 0;i < second.length; i++){
+        let letter = second[i];
+        //can't find letter or letter is zero then it's not an anagram
+        if(!lookup[letter]){
+            return false;
+        }else{
+            lookup[letter] -= 1;
+        }
+    }
+    return true;
+}
+
+console.log(validAnagram('anagram','nagaram'))
+
+
+```
+
+Any time you have multiple piece of data and you need to compare them, in particular if we need to see if they consist of the same individual piece whether it's anagrams or you're trying to see if one array is equal to another array squared each individual piece or if you need to telll if numbers consists of the same digits just in a different order.
+
 
 
 
