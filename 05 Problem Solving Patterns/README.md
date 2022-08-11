@@ -139,12 +139,79 @@ console.log(validAnagram('anagram','nagaram'))
 
 
 ```
+Any time you have multiple piece of data and you need to compare them, in particular if we need to see if they consist of the same individual piece whether it's anagrams or you're trying to see ifs one array is equal to another array squared each individual piece or if you need to tell if numbers consists of the same digits just in a different order.
 
-Any time you have multiple piece of data and you need to compare them, in particular if we need to see if they consist of the same individual piece whether it's anagrams or you're trying to see if one array is equal to another array squared each individual piece or if you need to telll if numbers consists of the same digits just in a different order.
+### MULTIPLE POINTERS
+Creating `pointers` or values that correspond to an index or position and move towards the beginning; end or middled based on a certain condition
 
+Very efficient for solving problems with minimal space complexity as well.
 
+```
+[-4,-3,-2,-1,0,1,2,5]
+"alksjdalksjdlkasjdlks"
 
+```
 
+> AN EXAMPLE
+Write a function called `sumZero` which accepts a `sorted`(lowest to highest) array of integers. The function should find the `first` pair where the sum is 0. Return an array that includes both values sum to zero or undefined if a pair does not exist.
+
+```
+sumZero([-3,-2,-1,0, 1,2,3]) // [-3,3]
+sumZero([-2,0,1,3]) // undefined
+sumZero([1,2,3])// undefined
+```
+
+#### NAIVE SOLUTION
+This solution has a time complexity - O(N^2) and space complexity - O(1)
+```
+function sumZero(arr){
+    for(let i=0; i<arr.length; i++){
+        for(let j= i+1; j<arr.length; j++){
+            if(arr[i] + arr[j] === 0){
+                return [arr[i],arr[j]];
+            }
+        }
+    }
+}
+
+console.log(sumZero(-4,-3,-2,-1,0,1,2,5))
+
+//Expected output:[ -3, 3 ]
+
+```
+
+So this could benefit from a refactor using multiple pointer pattern. We would start a pointer ` at start [-4]` and start another pointer `at end[5]`, since the array is a sorted array, `at start is a smallest number` and `at end is a largest number`
+
+We start by just seeing what the sum is, what they add to. Well `-4` and `5` it is going to give as a positive number which is `1` and that is too big, we're looking for 0. So we will move the pointer down `-4` and `2`.
+
+#### REFACTOR
+Time Complexity of this solution is O(N)
+
+```
+//REFACTOR
+function sumZero(arr){
+    let left = 0;
+    let right = arr.length - 1;
+
+    //avoiding cross over, number minus itself
+    while(left < right){
+        let sum = arr[left] + arr[right]
+        if(sum === 0){
+            return [arr[left], arr[right]]
+        }else if(sum > 0){
+            right--;
+        }else{
+            left++;
+        }
+    }
+}
+
+console.log(sumZero([-4,-3,-2,-1,0,1,2,3,10])) 
+
+//Expected output: [ -3, 3 ]
+```
+
+So the above solution uses two pointers in this case we are working from far left side and the far right side towards the middle.
 
 
 
