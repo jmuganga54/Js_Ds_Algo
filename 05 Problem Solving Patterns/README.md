@@ -405,3 +405,16 @@ tempSum 14
 
 ```
  
+ ### Divide and Conquer | Intro
+This pattern involves dividing a data set into smaller chunks and then repeating a process with a subset of data
+
+This pattern can tremendously `decrease time complexity`
+
+> So what we do is we take a larger set of data usually an array of string. It could be a linked list or tree. But let's just say an array for now and rather than starting from the left and moving all the way to the right, let's say we're searching for value.
+> 
+> We start by dividing it into smaller pieces and then doing something to each smaller piece to determine where to go next.So we divide up a larger chunk of dta into smaller chunks.
+
+We will see how to implement `Divide and Conquer` on upcoming session.
+
+### RESOURCE
+[SLIDES](https://cs.slides.com/colt_steele/problem-solving-patterns)
