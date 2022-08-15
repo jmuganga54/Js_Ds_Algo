@@ -17,7 +17,27 @@ But the idea is basically taking one problem and doing it over and over on a sma
 
 `Remember` Recursion takes a little bit to click once you get it you get it. But if you struggle with it that's totally normal.
 
+### What is recursion?
 
+A `process` (a function in our case) that `calls itself`
+```
+no_odds([3142,5798,6550,5914]) // No Odds
+no_odds([5798,6550,5914]) // No Odds
+no_odds([6550,5914]) // No Odds
+no_odds([5914])// No Odds
+no_odds([])//No Odds
 
+```
+### Why do I need to know this?
+`It's EVERYWHERE!` It's used all the time.
+
+If you've been writing javascript you've probably been using recursive function without knowing it. The following things use recursion in Javascript and importance of it.
+* JSON.parse/ JSON.stringify
+* document.getElementById and DOM traversal algorithms
+* Object traversal
+* We will see it with more complex data structures.
+* It's sometimes cleaner alternative to iteration
+
+Now remember you don't have to do anything recursively but it's nice. Sometimes it's easier let's put it that way.It's cleaner and simpler to understand rather than doing it without recursion. 
 
 ## RESOURCE
