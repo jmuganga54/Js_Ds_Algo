@@ -401,8 +401,6 @@ tempSum 14
 tempSum 19
 tempSum 14
 19
-
-
 ```
  
  ### Divide and Conquer | Intro

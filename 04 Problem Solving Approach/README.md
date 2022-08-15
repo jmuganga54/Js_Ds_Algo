@@ -94,7 +94,7 @@ Ask yourself these question, which will help `understand the problem`
 * int? float? string?
 * Should it be an integer or  float (if you pass a float will you want a float, integer to integer)?
 * Are you even allowed to pass in a float.?
-* What about the string returning a strin?
+* What about the string returning a string?
 
 
 4. Can the outputs be determined from the inputs? In other words, do I have enough information to solve the problem? ( You may not be able to answer this question until you set about solving the problem.That's okay; it's still worth considering the question at this early stage.)
@@ -254,7 +254,7 @@ It's pretty common that in simplifying a problem you'll gain insight into the ac
 
 ```
 //Explore Concrete Examples
-charCount("aaa")
+charCount("aaaa")
 /*
 {
     a:4
