@@ -40,4 +40,47 @@ If you've been writing javascript you've probably been using recursive function 
 
 Now remember you don't have to do anything recursively but it's nice. Sometimes it's easier let's put it that way.It's cleaner and simpler to understand rather than doing it without recursion. 
 
+### The Call Stack
+`But first... let's talk about functions`
+
+If a recursive function is calling itself over and over again what happens behind the scenes.
+
+* In almost all program languages, there is a built in data structures that manages what happens when function are invoked.
+* In Javascript it is called `Call Stack`
+
+`Call Stack` So you can think of it as a stack of papers or something. It's actually a data structures called a `stack` that well learn about later.
+
+* Any time a function invoked it is placed`(pushed)` on the top of the call stack.
+* When Javascript sees the `return` keyword or when the function ends, the complier will remove(`pop`)
+
+```
+function takeShower(){
+    return 'Showering'
+}
+
+function eatBreakFast(){
+    let meal = cookFood()
+    return `Eating ${meal}`
+}
+
+function cookFood(){
+    let items = ['Oatmeal','Eggs','Protein Shake']
+    return items[Math.floor(Math.random()*items.length)]
+}
+
+function wakeUp(){
+    takeShower()
+    eatBreakFast()
+    console.log('Ok ready to go to work!')
+}
+
+console.log(wakeUp())
+```
+
+The idea behind it is that as functions are invoked they're added to the top of the stack and then they popped off one at a time from the top as well.
+
+### Why do I care?
+
+* You're used to functions being pushed on the call stack and popped off when they are done.
+* When we write recursive functions, we keep pushing new function onto the call stack!. In fact the same function over and over and it's waiting to be called.
 ## RESOURCE
