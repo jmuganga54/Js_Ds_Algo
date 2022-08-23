@@ -83,4 +83,41 @@ The idea behind it is that as functions are invoked they're added to the top of 
 
 * You're used to functions being pushed on the call stack and popped off when they are done.
 * When we write recursive functions, we keep pushing new function onto the call stack!. In fact the same function over and over and it's waiting to be called.
+
+### Our First Recursive Function
+#### How recursive functions work
+
+Invoke the `same` function with a different input until you reach your base case!
+
+#### Base Case
+The condition when the recursion ends
+
+> This is the most important concept to understand
+
+> Two selectional parts of a recursive function 
+* Base case
+* Different input
+
+#### Our first recursive function 
+```
+function countDown(num){
+    if(num <= 0){
+        console.log('All done')
+        return; //in order to stop it
+    }
+
+    console.log(num)
+    num--
+    countDown(num)
+}
+
+countDown(5)
+
+//Expected output:
+5
+4
+3
+2
+1
+```
 ## RESOURCE
