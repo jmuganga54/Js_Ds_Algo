@@ -120,4 +120,22 @@ countDown(5)
 2
 1
 ```
+
+### Our second recursive function
+
+```
+function sumRange(num){
+    if(num=== 1) return 1;
+    return num + sumRange(num-1)
+}
+```
+
+* Can you spot the base case?
+> Base case almost always involves a conditional to check for something
+ 
+* Do you notice the different input?
+* What would happen if we didn't return?
+
+> in this case whatever is returned from the base case matters it's added on to what the previous function call was waiting for.
+
 ## RESOURCE
