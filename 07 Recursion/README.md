@@ -165,4 +165,66 @@ function factorial(num){
 factorial(5)
 //Expected output: 120
 ```
+
+### Where thing go wrong
+
+This section will talk about some of the pitfalls the common problems that arise when you're writing recursive solutions.
+
+* No base case
+> You don't have a base case, or your base case is wrong.
+
+* Forgetting to return or returning the wrong thing!
+> So Importance of returning is that's what recursion is built on, the idea of this call stack where all these things are dependent on one another waiting they're kind of primed in a chain.
+
+* Stack overflow
+> Too many function trying to be called.
+```
+function factorial(num){
+   if(num === 1) console.log(1);
+   return num * factorial(num -1)
+
+ 
+
+}
+```
+
+### Helper Method Recursion
+> so far all the recursive functions we've written are single standalone function like factorial.It is recursive itself we call factorial from outside the function and factorial itself call factorial inside it's own code. That's been the case with all the functions we've written so far.
+
+With helper method recursion it's a little bit different. The below code doesn't do anything, this is sort of just a pattern that I'm laying out but with helper method recursion we have two functions.
+
+* The outer function `outer(input)`
+* Inside we have recursive function `helper(helperInput)`,this function call itself
+
+That's why is called a helper function or helper method recursion. We have our main outer function that we would call like a developer from outside `outer(input)` and pass something in and then inside the code of outer, there is another function defined and it is called and it call itself recursively.
+
+So this is commonly done when we need to compile something like an array or a list of data. We're not simply tabulating or multiplying one value, over and over like we work with factorial or summing different something range.
+
+> Another Example
+
+```
+function collectOddValues(array){
+    let result = []
+    function helper(helperInput){
+        if(helperInput.length === 0){
+            return;
+
+        }
+        if(helperInput[0]%2 !== 0){
+            result.push(helperInput[0])
+        }
+        helper(helperInput.slice(1))
+    }
+    helper(array)
+    return result
+}
+
+collectOddValues([1,2,3,4,5,6,7,8,9])
+console.log(collectOddValues([1,2,3,4,5,6,7,8,9]))
+
+Expected output: [ 1, 3, 5, 7, 9 ]
+
+```
+
+
 ## RESOURCE

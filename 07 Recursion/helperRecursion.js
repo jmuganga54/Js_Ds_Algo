@@ -1,0 +1,31 @@
+// function outer(input){
+//     let outerScopedVariable = []
+
+//     function helper(helperInput){
+//         //modify the outerScopedVariable
+//         helper(helperInput--)
+//     }
+
+//     helper(input)
+
+//     return outerScopedVariable;
+// }
+
+function collectOddValues(array){
+    let result = []
+    function helper(helperInput){
+        if(helperInput.length === 0){
+            return;
+
+        }
+        if(helperInput[0]%2 !== 0){
+            result.push(helperInput[0])
+        }
+        helper(helperInput.slice(1))
+    }
+    helper(array)
+    return result
+}
+
+collectOddValues([1,2,3,4,5,6,7,8,9])
+console.log(collectOddValues([1,2,3,4,5,6,7,8,9]))
