@@ -149,5 +149,20 @@ function factorial(num){
 }
  
 console.log(factorial(3))
+
+//Expected output: 6
+```
+
+### Factorial using Recursive Method
+```
+function factorial(num){
+    if(num === 1){
+        return 1;
+    }
+    return num * factorial(num-1)
+
+}
+factorial(5)
+//Expected output: 120
 ```
 ## RESOURCE
