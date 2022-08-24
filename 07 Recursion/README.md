@@ -138,4 +138,16 @@ function sumRange(num){
 
 > in this case whatever is returned from the base case matters it's added on to what the previous function call was waiting for.
 
+### Factorial using Iterative Solution
+```
+function factorial(num){
+    let total = 1;
+    for(let i=num; i>0; i--){
+        total *= i
+    }
+    return total;
+}
+ 
+console.log(factorial(3))
+```
 ## RESOURCE
