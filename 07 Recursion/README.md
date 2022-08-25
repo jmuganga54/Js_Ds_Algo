@@ -225,6 +225,48 @@ console.log(collectOddValues([1,2,3,4,5,6,7,8,9]))
 Expected output: [ 1, 3, 5, 7, 9 ]
 
 ```
+### PURE RECURSION
 
+> This section goes together with the previous section, we're going to solve the same problem in two different ways.
 
+`Pure recursion` meaning the function itself is totally self-contained in it's recursive. We don't have some external data structure like we had in 'helper method recursion`. We're not doing a nested function helper method recursion.
+
+Here is the code
+```
+function collectOddValues(arr){
+    let newArr = [];
+
+    if(arr.length === 0){
+        return newArr
+    }
+
+    if(arr[0]%2 !== 0){
+        newArr.push(arr[0])
+    }
+
+    newArr = newArr.concat(collectOddValues(arr.slice(1)));
+
+    return newArr;
+}
+```
+
+It is shorter but it's little harder to wrap your head around at first.
+
+```
+collectOddValue([1,2,3,4,5])
+[1].concat(collectOddValue([2,3,4,5]))
+    [].concat(collectOddValue([3,4,5]))
+        [3].concat(collectOddValue([4,5]))
+             [].concat(collectOddValue([5]))
+                   [5].concat(collectOddValue([]))
+                                []
+Then the concat() function to build up the result based on the result value [1,3,5]
+```
+
+#### Pure Recursion Tips 
+* For arrays, use methods like `slice`, `the spread operator` and `concat` that make copies of arrays so you do not mutate them.
+
+* Remember that strings are immutable so you will need to use methods like `slice`, `substr` or `substring` to make copies of strings
+
+* To make copies of object use `Object.assign` or the `spread operator`
 ## RESOURCE
