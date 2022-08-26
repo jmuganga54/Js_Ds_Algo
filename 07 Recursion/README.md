@@ -262,7 +262,6 @@ collectOddValue([1,2,3,4,5])
                                 []
 Then the concat() function to build up the result based on the result value [1,3,5]
 ```
-
 #### Pure Recursion Tips 
 * For arrays, use methods like `slice`, `the spread operator` and `concat` that make copies of arrays so you do not mutate them.
 
