@@ -18,7 +18,90 @@ let usernames = ['tommy', 'monkeygurl', 'dinesh123', 'patrick33','cats4lyfe','ti
 
 
 ```
+## Keywords
+> Intro to Linear Search
+### How do we search?
+So for now we will focus on searching in an array
 
+So Image that a user typed something in and they're trying to create and address then they need to enter a state or territory and for our application we want to make sure it's in this array. What is hte best way to do that.
+```
+let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+```
+
+> Given an array, the simplest way to search for a values is to look at every element in the array and check if it's the value we want.
+
+Right so if the user enters let's say `Indiana` we would just start at the beginning and check. And we keep going until we get to Indiana, and in that case we return something such as true, or we say the index that we found.
+
+Now that approach is actually not a bad approach.Now in this situation where we have sorted data alphabetically sorted there are better ways.
+
+For let go back to the list which was unsorted.
+```
+let usernames = ['tommy', 'monkeygurl', 'dinesh123', 'patrick33','cats4lyfe','timothy','tom','tommy1',tomm_y',i_hate_cats','pickle_luvr','pickle_hater','dog_guy','q','juan987'] 
+```
+
+> So if someone enters 'i_hate_cats', it's username. How do we check if its taken or not
+
+In that case the best way of doing it is to check every single element one at a time. Are you 'i_hate_cates', no, then next, continue, keep going until we find it or we get to the end. That is called `Linear Search`.
+
+### Javascript has search
+There are many different search method on array in Javascript
+* indexOf
+* includes
+* find
+* findIndex
+
+> But how do these functions work?
+
+```
+let usernames = ['tommy', 'monkeygurl', 'dinesh123', 'patrick33','cats4lyfe','timothy','tom','tommy1','tomm_y','i_hate_cats','pickle_luvr','pickle_hater','dog_guy','q','juan987']
+
+console.log(usernames.indexOf('tomm_y'))
+//searching for something that doesn't exist
+console.log(usernames.indexOf('asd'))
+usernames.includes('tom')
+//checking if includes
+console.log(usernames.includes('tom'))
+console.log(usernames.includes('toms'))
+
+//Expected output:
+8
+-1
+true
+true
+false
+
+```
+
+So what's happening on the above methods, it is going through and checking each item to see if match or not, until the end.
+
+### Linear Search 
+We visit one item at at time starting at the beginning moving forward. Or we could start at the end and move backward but it doesn't matter. All that matters is that we're moving at a set interval one item at a time checking every single thing.
+
+> For example
+Let's search for 12:
+
+```
+function linearSearch (arr,num){
+    //check is it is an array
+    if(arr.length === 0){
+        return;
+    }
+    //Loop through all the the item 
+    for(let index in arr){
+        //compare if it is 12
+        if(arr[index] === num){
+           //if true, return index of num
+            return index;
+        }
+
+    }
+    //if false, return -1
+    return -1
+}
+
+console.log(linearSearch(numbers,12))
+
+```
 
 
 ## Resouce
