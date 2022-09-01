@@ -18,7 +18,7 @@ let usernames = ['tommy', 'monkeygurl', 'dinesh123', 'patrick33','cats4lyfe','ti
 
 
 ```
-## Keywords
+## Keywords && Notes
 > Intro to Linear Search
 ### How do we search?
 So for now we will focus on searching in an array
@@ -113,5 +113,18 @@ Average is also `O(n)`, we care bout just the general trend. So as N grows the l
 
 > So this is Linear search, it's the best we can do with an unsorted piece of data.
 
+### Binary Search 
+
+Second Searching Algorithm and this one can be a significant improvement on `Linear Search`, which is called `Binary Search`
+
+* Binary Search is a much faster form of search.
+* Rather than eliminating one element at a time, you can `eliminate half` of the remaining elements at a time
+* Binary search only works on sorted arrays!
+
+#### Divide and Conquer
+
+So the idea is `dividing and conquering`, so we split up the array into two pieces. We pick a pivot in the middle usually and we check the left side and the right side and see where, based of what we're looking for where it will be in which half.
+
+> So if we have a sorted array of numbers or string or whatever it is as long as we can compare easily to check if something is greater than or less than in some respect if we can do that then we can implement `binary Search which is much better`.
 
 ## Resouce
