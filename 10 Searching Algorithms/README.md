@@ -127,4 +127,24 @@ So the idea is `dividing and conquering`, so we split up the array into two piec
 
 > So if we have a sorted array of numbers or string or whatever it is as long as we can compare easily to check if something is greater than or less than in some respect if we can do that then we can implement `binary Search which is much better`.
 
+### Binary Search Pseudocode
+* Write a function accepts a sorted array and value
+* Create a left pointer at the start of the array, and a right pointer at the end of the array.
+* While the left pointer comes before the right pointer:
+    * Create pointer in the middle
+    * If you find the value you want, return the index
+    * If the value is too small, move the left pointer up
+    * If the value is too large, move the right pointer down
+* if you never find the value, return -1
+
+> You're going to loop over and over and there's two thing that you're checking for. One is have you found the element. 
+>
+> So while you haven't found the element keep looping But along with that there's a second condition which is you want to make sure that you're only looping while the left comes before the right pointer and then you're also going to pick the middle and you can just take an average of the left and right, not the values you should remember but the position.
+>
+> So if the left start at 0 and right start at 10 then you could take the middle to be five and then you're basically going to loop and you're going to check first of all is the element equal to the middle, is the middle, what we're looking for if it is then just return we're done.
+>
+> So if you find that value return the index if the value is too small then you're going to move the left pointer up and if the values is too large you move the right pointer down.
+>
+> And then finally at the end if you never find the value just return negative 1.
+
 ## Resouce
