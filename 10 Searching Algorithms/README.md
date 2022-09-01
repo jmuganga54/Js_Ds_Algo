@@ -103,5 +103,15 @@ console.log(linearSearch(numbers,12))
 
 ```
 
+### Linear Search BIG O
+
+The very best case is that we find the thing we're looking for right away `O(1)`. So that's the best possible scenario, that is pretty rare, depending on the size of your data the worse case is `O(N)`.
+
+So if we have a million integers in an array and we're searching for the last one or we're searching for something that's not in there we're going to have to look a million times. If we have 50 things in there and it's the very last element that we're looking for, we're going to have to look 50 times 
+
+Average is also `O(n)`, we care bout just the general trend. So as N grows the length of the array grows or the length of string or whatever we're working with, so does the average amount of time it takes.
+
+> So this is Linear search, it's the best we can do with an unsorted piece of data.
+
 
 ## Resouce
