@@ -147,4 +147,112 @@ So the idea is `dividing and conquering`, so we split up the array into two piec
 >
 > And then finally at the end if you never find the value just return negative 1.
 
-## Resouce
+### Binary Search Solution
+> Longer Version
+```
+function binarySearch(arr,elem){
+    //setting the start pointer
+    let start = 0;
+    //setting the end pointer
+    let end = arr.length -1
+    //setting the middle pointer
+    let middle =Math.floor((start + end)/2);
+    
+
+    //[2,5,6,9,13,15,28,30], start:2, middle:9 end:30
+    //continue to loop and repeat the above process
+    while(arr[middle] !== elem && start <= end){
+ 
+    /**
+     * While the middle is wrong, example 9 but we are 
+     * we are looking for 15
+     * So we're going to repeat the above code.
+     * 
+     * Now the code that we're going to do first 
+     * we're going to check, the middle value
+     * 
+     * The middle is either greater than or less than 
+     * if the number we're looking for is less than 
+     * the middle, so if our middle is
+     * is 9 [2,5,6,[9],13,15,28,30], let say we're 
+     * looking for six, six is less than 9, so we're going to move our window all the way down to [2,5,6]
+     * 
+     * So what we are supposed to do is to shift our end
+     * down to 6, start 2, and middle 5
+     * 
+     * Now you might think we could shift the end to 
+     * 9 and that would work but it's redundant because
+     * we know that 9 is not the answer already, we checked
+     * it
+     * 
+     * So we are going to set the end to be (middle - 1),
+     * which will point to 6
+     * 
+     * Likewise the other direction like in this case with
+     * 15 we checked 9 that's too small, so we're going
+     * to move our window all the way up to [13,15,28,30],
+     * so our start will be 13, middle 15 and end 30.
+     * 
+     * 
+     * 
+     */
+
+    if(elem < arr[middle]){
+        //end pointer to be (middle - 1),point to 6, [2,5,6,[9],13,15,28,30]
+        //the start pointer is still pointing at 2
+        end = middle - 1
+
+    }else{
+        //incase elem is greater than middle value
+        //start to be (middle + 1),point to 13, [2,5,6,[9],13,15,28,30]
+        //the end pointer is still pointing at 30
+        start = middle + 1
+    }
+    //middle pointer,(4+7)/2 = Math.floor(5.5), 5, which will point at 15
+    // then test it again
+    middle =Math.floor((start + end)/2);
+
+    }
+
+    //After looping all the element necessary
+    if(arr[middle] === elem){
+        return middle
+    }
+    return -1
+
+}
+
+console.log(binarySearch([2,5,6,9,13,15,28,30],5))
+
+//Expected output:
+0 3 7
+1
+```
+
+> Shorter version
+```
+function binarySearch(arr,elem){
+    let start = 0;
+    let end = arr.length -1
+    let middle =Math.floor((start + end)/2);
+    
+    while(arr[middle] !== elem && start <= end){
+    if(elem < arr[middle]) end = middle - 1
+       else  start = middle + 1
+    middle =Math.floor((start + end)/2);
+
+    }
+    return arr[middle] === elem ? middle : -1;
+}
+
+console.log(binarySearch([2,5,6,9,13,15,28,30],30))
+
+//Expected outcome:
+7
+```
+
+So Keep in mind `Binary Search` works great on a sorted array otherwise it is useless.
+
+So `Linear Search` is the best that we can do.Is the best we can do on an unsorted array, `Binary Search` works better if our data is sorted
+
+## Resource
