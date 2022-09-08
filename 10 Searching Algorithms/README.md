@@ -255,4 +255,57 @@ So Keep in mind `Binary Search` works great on a sorted array otherwise it is us
 
 So `Linear Search` is the best that we can do.Is the best we can do on an unsorted array, `Binary Search` works better if our data is sorted
 
+### Binary Search BIG O
+In this section we will be talking about the time complexity of Binary Search, for example for an array.
+
+So as the length of the array grows as sorted array. How does the time complexity grow in relation. The worst and average case is `O(log n)` and the best case is `O(1)`, because it is possible that the very first thing we pick is the element we are looking for.If we pick the middle point of an array and that's what we want, while that one operation is constant  `O(1)` pretty rare, but it is possible.
+
+`Worst and average case` are both `O(log n)`
+
+> Suppose we're searching for 13
+>
+Given array: `[2,4,5,9,11,14,15,19,21,25,28,30,50,52,60,63]`
+
+> How many steps does it take?
+>
+But the first step is to pick a `midpoint` which will be `19`, sow we pick `19` and we check is 13 is less than or greater than 19, so we know it is down the middle point `[2,4,5,9,11,14,15]`
+
+The we pick the middle of `[2,4,5,9,11,14,15]` which is `9`, then check if `13` is less than or greater than `9`, which is greater than `9`, then we go up the middle point and pick `[11,14,15]` portion of an array.
+
+Then we pick the middle point of `[11,14,15]` which is `14`, then check if `13` is less than or greater than `14`, which is less than `14`, then we go down the middle point and pick `[11]`.
+
+So we check if `13` is less or greater than `11`, the answer is no.
+
+And so we know that `13` is not in this array, unless it's somehow an unsorted array in which case we shouldn't be using binary search.
+
+But given the conditions of binary Search we can say without a doubt that `13` is not in this array.So if we look at the number of steps here we had `16 elements` in  `[2,4,5,9,11,14,15,19,21,25,28,30,50,52,60,63]`, it took four steps to say with certainty that an element is not in the array.
+
+```
+NOPE, NOT HERE!
+16 elements = 4 "Steps"
+```
+So we could have found it earlier if it actually was in this array. If we were looking for `9` for example it takes `2 steps`, for `14` it would take `3 steps`.
+
+But if we're looking for something that's not in there or the very worst case it took four steps. Now `16 elements 4 steps`
+
+To add another "steps", we need to double the number of elements. `Let search for 32`, and that took `5 steps` until we found it.
+
+So we doubled the number of elements from the previous slide we had 16 elements which was four steps, it took a maximum four steps, we double it to 32 elements and it took a maximum of five steps to find our element.
+
+```
+32 elements = 5 Steps (worst case)
+```
+So that relationship is `log base 2 of n` which we simplify to `log n`, it basically means `2 to what powers` give us `n`
+
+So if we go all the way back to array with `16 elements`, what is `log base 2 of 16` it is `4` because `2 to 4 power gives us 16`.
+
+So if we go all the way back to array with `32 elements`, what is `log base 2 of 32` it is `5` because `2 to 5 power gives us 32`.
+
+So every time we double the size of `n` and every time we double it we are simply adding one extra step.
+
+`O(Log n)` is really good if we look at the Big O complexity graphs, log n is all the way down. See 'Resource`. It's so good in fact they don't even put a separate line.
+
+`O(log n)` is so much better that, it looks like `O(1)`, binary Search is very fast.
+
+
 ## Resource
