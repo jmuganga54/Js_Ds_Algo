@@ -307,5 +307,45 @@ So every time we double the size of `n` and every time we double it we are simpl
 
 `O(log n)` is so much better that, it looks like `O(1)`, binary Search is very fast.
 
+### Naive String Search 
+In these searching we are still talking about searching alogarithms but now we're talking about a different type, which has to do with searching for `substrings` in a larger string.
+
+* So imagine that you want to count the number of times a smaller string appears in a longer string.
+* A straightforward approach involves checking pairs of character individually.
+
+> For example 
+Let's imagine we have a string here `"harold said haha in hamburg"`
+
+So if we were searching for just a single character like `"i"`, for example, that's very easy, we just do a linear search.
+
+But if you're checking for a pattern for example, I wnt to see if `"ha ha"` is in there, that take some more work because we're no longer just checking a single character against a single character.
+
+#### Naive String Search
+
+Long string:            Short String:
+
+`wowomgzomg`            `omg`
+
+So the simplest approach is going to involve basically if we put them next to one another we're going to start by walking one character at a time and we're just going to check is this `w`owomgzomg here equal to the `o`mg at the beginning or are these two characters the same, If no, move on, now we have a mach w`o`womgzomg and `o`mg. 
+
+So now we move on to the second character, we are looking for an `m`, wo`w`omgzomg and o`m`g, So we continue like that untill we find the match which is wow`omg`zomg  and `omg`. And we hit the end of our short string we found a match.
+
+So now we add a counter we increment something to keep track of how many matches we found. We found one so far.
+
+So basically we do it for every single character of `wowomgzomg` and we start at the beginning of our smaller string `o`mg, and check it against every individual character in the longer string.
+
+#### Pseudocode
+* Define the function which takes two string, larger string and then the pattern that we're looking for.
+* And then you loop over each character in the longer string and then we have another loop over the shorter string.
+* If the characters don't match, break out of the inner loop
+
+If we find a mach for `o` for example omg then you move onto the next character keep going until the end.
+
+* if the character do match, keep going.
+* if you complete the inner loop and find a match, increment  the counter of matches.
+* Return the count.
+
+
+
 
 ## Resource
