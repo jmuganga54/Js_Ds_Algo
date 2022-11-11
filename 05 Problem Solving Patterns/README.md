@@ -34,49 +34,78 @@ This can often avoid the need for nested loop or `O(N^2)` operations with arrays
 Write a function called `same`, which accepts two arrays. The function should return if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same.
 
 ```
+//Input: arr1,arr2 ([1,2,3,2,5],[9,1,4,4,11])
+//output: true or false
+//frequency - how many times an item appeared in an array
+
 function same(arr1,arr2){
-    //Length of the compared arrays must be the same
-    if(arr1.length !== arr2.length){
-        return false
-    }
-    //frequency - how many times an item appeared in an array
-    //object which will count the frequency of each item in an array
-    //Input:[1,2,3,2] output:{'1':1, '2':2, '3':1}
-    let frequencyCounter1 = {}
-    let frequencyCounter2 = {}
+    //check if arr1 and arr2 are arrays of numbers
+    let arr1Check =arr1.every(item=>{
+        return typeof item === 'number'
+    })
 
-    //iterating each items of arr1 create and assign frequency of each item
-    for(let va1 of arr1){
-        frequencyCounter1[va1] = (frequencyCounter1[va1] || 0) + 1
-        debugger;
+    let arr2Check = arr2.every(item=>{
+        return typeof item === 'number'
+    })
+
+    if(!arr1Check || !arr2Check){
+        return 'array contain value typeof not equal to number'
     }
 
-    //iterating each items of arr2 create and assign frequency of each item
-    for(let va1 of arr2){
-        frequencyCounter2[va1] = (frequencyCounter2[va1] || 0) + 1
-    }
-
-    //objected created of each array 
-    console.log(frequencyCounter1)
-    console.log(frequencyCounter2)
     
-    //iterating all the keys of object frequencyCounter1
-    for(let key in frequencyCounter1){
-        // After squaring a key, is this found in object frequencyCounter2
-        if(!(key ** 2 in frequencyCounter2)){
-            return false
-        }
-        //Does its values correspond 
-        if(frequencyCounter2[key** 2] !== frequencyCounter1[key]){
-            return false
-        } 
+    //check if arr1 and arr2 are of the same length
+     if(arr1.length !== arr2.length){
+         return false
+     }
+ 
+    //create two object which will assign each item based of its frequency for each array {1:'1',2:'2',3:'1',...}
+    let frequencyArr1 = {}
+    let frequencyArr2 = {}
+
+    //Loop through each item in arr1 and arr2 then assign each item based on its frequency{1:'1',2:'2',3:'1',...}
+    //arr1
+    for(item of arr1){
+        frequencyArr1[item] = (frequencyArr1[item] || 0) + 1
     }
 
-  
-    return true
+    //arr2
+    for(item of arr2){
+        frequencyArr2[item] = (frequencyArr2[item] || 0) + 1
+    }
+
+    console.log(frequencyArr1)
+    console.log(frequencyArr2)
+
+    //Expected output:
+    //{'1': 1, '2': 2, '3': 1, '5': 1}
+    //{'1': 1, '4': 2, '9': 1, '11': 1}
+
+ 
+   //Loop through each item of frequencyArr1
+    for(key in frequencyArr1){
+        
+       //check if item in frequencyArr1 has it's square contained in frequencyArr2
+       if(!(key**2 in frequencyArr2)){
+           return false
+       }
+
+       //check if item in frequencyArr1 {'2':2} and its square in frequencyArr2 {'4':2}, all have the same frequency 
+       if(!(frequencyArr1[key] === frequencyArr2[key**2])){
+           return false
+       }
+
+        
+    }
+
+    
+    //if all is ok return true
+    return true;
+   
+    
+    
 }
 
-console.log(same([1,2,3,2,5],[9,1,4,4,11]))
+same([1,2,3,2,5],[9,1,4,4,11])
 
 
 
